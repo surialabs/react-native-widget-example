@@ -1,0 +1,3 @@
+rootProject.name = 'recapp'
+
+include ':app'

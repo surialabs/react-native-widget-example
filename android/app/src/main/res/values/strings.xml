@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">recapp</string>
+    <string name="appwidget_text">Panadol</string>
+    <string name="add_widget">Add widget</string>
+</resources>
