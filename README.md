@@ -86,9 +86,13 @@ const styles = StyleSheet.create({
 
 ## Implementation For Android
 > Open the project in android studio (/android)
-	- Right click on “app/src/res” and select New > Widget > App Widget
-	- Give it a class name (eg. MyWidget.java) and the Layout file + Class will be generated
-	- Open the MyWidget.java file and modify the onUpdate method
+
+> Right click on “app/src/res” and select New > Widget > App Widget
+
+> Give it a class name (eg. MyWidget.java) and the Layout file +
+> Class will be generated
+
+> Open the MyWidget.java file and modify the onUpdate method
 ```
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -125,8 +129,10 @@ const styles = StyleSheet.create({
 > Data to be passed can be modified to your preference :p
 
 > The next step is to create a CustomReactActivity.java since the MainActivity doesn’t allow us to pass in initialProps
-	- After created the new class, make it extends ReactActivity and implements DefaultHardwareBackBtnHandler (this is to handle the back button behavior when click on hardware back button in android)
-	- Then, insert the following codes:
+
+> After created the new class, make it extends ReactActivity and implements DefaultHardwareBackBtnHandler (this is to handle the back button behavior when click on hardware back button in android)
+
+> Then, insert the following codes:
 
 ```
     private ReactRootView mReactRootView;
@@ -173,12 +179,18 @@ const styles = StyleSheet.create({
 
 ## Implementation For iOS
 > Open the project in xcode (/ios)
-	- In iOS, the widget is called “Today Extension”.
-	- So, select the project in xcode left column,  then click the menu bar “Editor > Add Target > Today Extension” and give it a name (Eg. MyWidget) and click finish.
-	- It will appear as a new folder and consist of swift file + storyboard + info.plist
-	- Open up the storyboard of the Widget and remove the existing Text. Then add a Button into it (Because Text cannot fire action while Button can)
-	- Then open both swift file and storyboard side by side. Point the mouse cursor to the Button you just created and Ctrl + Drag it to the swift file.
-	- A new method shall be created in the swift file, change the method to the following
+
+> In iOS, the widget is called “Today Extension”.
+
+> So, select the project in xcode left column,  then click the menu bar “Editor > Add Target > Today Extension” and give it a name (Eg. MyWidget) and click finish.
+
+> It will appear as a new folder and consist of swift file + storyboard + info.plist
+
+> Open up the storyboard of the Widget and remove the existing Text. Then add a Button into it (Because Text cannot fire action while Button can)
+
+> Then open both swift file and storyboard side by side. Point the mouse cursor to the Button you just created and Ctrl + Drag it to the swift file.
+
+> A new method shall be created in the swift file, change the method to the following
 ```
     @IBAction func openMedicationScreen(_ sender: Any) {
         let myAppUrl = URL(string: "recapp://P0001")!
@@ -193,7 +205,7 @@ const styles = StyleSheet.create({
 
 > In order to allow this to work, we need to allow our app to be opened using url scheme.
 
-> Open the Info.plist for the project, not the 1 in MyWidget. Right click on it and Open As > Source Code. Then, add in the following item as first item in <dict>
+> Open the Info.plist for the project, not the 1 in MyWidget. Right click on it and Open As > Source Code. Then, add in the following item as first item in “dict”
 ```
 <key>CFBundleURLTypes</key>
 	<array>
