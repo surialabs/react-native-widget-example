@@ -23,7 +23,7 @@ public class CustomReactActivity extends ReactActivity implements DefaultHardwar
     private ReactInstanceManagerBuilder getBuilder(){
         return ReactInstanceManager.builder()
                 .setApplication(getApplication())
-//                .setBundleAssetName("index.android.jsbundle")
+//                .setBundleAssetName("index.android.bundle")
 //                .setUseDeveloperSupport(false)
                 .setBundleAssetName("index.android.bundle")
                 .setUseDeveloperSupport(true)
